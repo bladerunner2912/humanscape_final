@@ -1,0 +1,62 @@
+<header class="w-full bg-[#ebebeb] pt-[4px]">
+  <div
+    class="flex w-full flex-row justify-between items-center pl-[8%] pr-[8%]"
+  >
+    <img class="w-[12%] bg-contain" src="../../../assets/logo.png" />
+    <div class="relative w-[35%] flex flex-row justify-between items-start">
+      <div (mouseenter)="hovering()" (mouseleave)="nonHovering()">
+        <div class="hover:text-gray-600 cursor-pointer text-[14px]">WORK</div>
+        <div *ngIf="options" class="absolute">
+          <ul>
+            <li
+              (click)="navigateTo('architect')"
+              class="hover:text-gray-600 cursor-pointer my-2 text-[14px]"
+            >
+              <a routerLink="about"> Architecture</a>
+            </li>
+            <li
+              (click)="navigateTo('initiative')"
+              class="hover:text-gray-600 cursor-pointer my-2 text-[14px]"
+            >
+              Initiatives
+            </li>
+            <li
+              (click)="navigateTo('interior')"
+              class="hover:text-gray-600 cursor-pointer my-2 text-[14px]"
+            >
+              Interiors
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        (click)="navigateTo('about')"
+        class="hover:text-gray-600 cursor-pointer text-[14px]"
+      >
+        ABOUT
+      </div>
+      <div
+        (click)="navigateTo('contact')"
+        class="hover:text-gray-600 cursor-pointer text-[14px]"
+      >
+        CONTACT
+      </div>
+    </div>
+    <div class="w-[10%] flex flex-row">
+      <div class="flex flex-col">
+        <div class="flex flex-row items-center">
+          <img
+            class="w-[18px] h-[18px] mr-[6px]"
+            src="../../../assets/search.png"
+          />
+          <input
+            placeholder="Search"
+            class="w-full border-none bg-[#ebebeb] focus:border-none focus:outline-none"
+          />
+        </div>
+        <div class="border-black border-t my-1"></div>
+      </div>
+    </div>
+  </div>
+</header>
