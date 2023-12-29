@@ -10,9 +10,18 @@
     <img class="h-[450px] bg-contain bg-black" [src]="primaryImage" />
   </div>
 </div>
-<div class="mt-12 flex flex-wrap gap-16 justify-center items-center">
-  <div *ngFor="let img of images">
-    <img [src]="img.url" alt="Image" class="my-12" />
-    <p>{{ img.imageName }}</p>
+<div class="mt-12 px-2.5 flex flex-wrap gap-12 justify-center items-center">
+  <div
+    class="group grayscale hover:grayscale-0 transition-grayscale duration-300"
+    *ngFor="let img of images"
+  >
+    <div (click)="openProject(img.projectId)">
+      <img [src]="img.url" alt="Image" class="my-2" />
+      <p
+        class="child-element opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        {{ img.imageName }}
+      </p>
+    </div>
   </div>
 </div>

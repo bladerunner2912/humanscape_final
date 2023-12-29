@@ -9,4 +9,8 @@ export class NaviagtionService {
   navigate(route: string) {
     this.router.navigate([route]);
   }
+
+  navigateWithId(route: string, id: number) {
+    this.router.navigate([route, { id: id }]);
+  }
 }
