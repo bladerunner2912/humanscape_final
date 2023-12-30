@@ -1,1 +1,29 @@
-<p>about works!</p>
+<h1 class="flex flex-row justify-center my-8 text-xl">Humanscape</h1>
+<img class="px-[7%] mb-12" src="{{ primaryImage }}" />
+<div class="my-16 flex flex-row px-[7%] justify-between items-start">
+  <div class="text-xm w-1/2">{{ leftParagraphOne }}</div>
+  <div class="text-xm w-1/2">{{ rightParagraphOne }}</div>
+</div>
+<div class="my-16 flex flex-row pl-[7%] gap-16 justify-between items-center">
+  <div class="text-xm w-1/2">{{ leftParagraphTwo }}</div>
+  <div class="text-xm w-1/2">
+    <img class="w-3/4 h-auto" src="{{ selectedUrl }}" />
+  </div>
+</div>
+<div class="mt-24 flex flex-wrap gap-12 justify-center items-center">
+  <img
+    *ngFor="let img of images"
+    class="my-6 max-h-[500px] w-auto bg-contain"
+    [src]="img"
+    alt="Image"
+  />
+</div>
+<h1 class="flex flex-row justify-center my-8 text-xl">People</h1>
+<div class="mt-16 flex flex-wrap-reverse justify-center gap-16">
+  <div class="w-[350px] text-wrap" *ngFor="let p of people.reverse()">
+    <img class="w-[350px] h-auto" [src]="p.img" />
+    <p class="text-[22px] text-bold mt-2">{{ p.name }}</p>
+    <p class="text-[18px] text-bold">{{ p.role }}</p>
+    <p class="text-wrap text-[14px] mt-2">{{ p.bio }}</p>
+  </div>
+</div>

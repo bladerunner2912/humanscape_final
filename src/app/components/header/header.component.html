@@ -2,7 +2,11 @@
   <div
     class="flex w-full flex-row justify-between items-center pl-[8%] pr-[8%]"
   >
-    <img class="w-[12%] bg-contain" src="../../../assets/logo.png" />
+    <img
+      (click)="navigateTo('')"
+      class="w-[12%] bg-contain"
+      src="../../../assets/logo.png"
+    />
     <div class="relative w-[35%] flex flex-row justify-between items-start">
       <div (mouseenter)="hovering()" (mouseleave)="nonHovering()">
         <div class="hover:text-gray-600 cursor-pointer text-[14px]">WORK</div>

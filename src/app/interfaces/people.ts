@@ -1,4 +1,4 @@
-export interface People {
+export interface IPeople {
   name: string;
   role: string;
   img: string;

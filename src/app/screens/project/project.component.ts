@@ -5,11 +5,12 @@ import { IProject } from '../../interfaces/project';
 import { Observable, switchMap } from 'rxjs';
 import { IImages } from '../../interfaces/image';
 import { ImageServiceService } from '../../services/imageService/image-service.service';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './project.component.html',
   styleUrl: './project.component.css',
 })
@@ -23,6 +24,15 @@ export class ProjectComponent implements OnInit {
     private route: ActivatedRoute,
     private contentful: ContentfulService
   ) {}
+  // ! getObjectKeys
+  getObjectKeys(obj: any): string[] {
+    if (this.project) {
+      return Object.keys(obj);
+    }
+    return [];
+  }
+
+  // ! main project loader function
   ngOnInit(): void {
     console.log(this.route.snapshot.paramMap.get('id'));
     this.id = this.route.snapshot.paramMap.get('id');

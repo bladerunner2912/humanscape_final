@@ -3,7 +3,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "ArtifaktElement";
+  src: url("../src/assets/fonts/ArtifaktElement-Regular.woff.ttf")
+    format("truetype"); /* Adjust the path accordingly */
+  /* Add other font formats if available (woff, woff2, etc.) */
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap");
+}
+
+@font-face {
+  font-family: "Arsenal";
+  src: url("https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap");
+}
+
+.font-barlow {
+  font-family: "Barlow", sans-serif;
+}
+
+.font-arsenal {
+  font-family: "Arsenal", sans-serif;
+}
+
 html,
 body {
+  font-family: "ArtifaktElement", sans-serif;
   background-color: #ebebeb;
 }

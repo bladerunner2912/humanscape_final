@@ -1,7 +1,45 @@
-<div class="px-[13%]">
-  <div class="w-full mt-12 flex flex-row justify-center">Project Heading!</div>
-  <div class="flex flex-row justify-between space-x-12">
-    <div class="flex flex-col">Credentials Column</div>
-    <div class="flex flex-col">Bio Column</div>
+<div class="px-[10%] mb-16">
+  <div class="w-full my-8 text-bold text-xl flex flex-row justify-center">
+    {{ project?.title }}
+  </div>
+  <img class="my-8" src="{{ project?.primaryImage }}" />
+  <div class="my-24 flex flex-row justify-between">
+    <div class="w-1/2">
+      <i>
+        {{ project?.tagLine }}
+      </i>
+    </div>
+    <div class="w-1/2">{{ project?.tagBio }}</div>
+  </div>
+  <img class="my-8" src="{{ project?.secondaryImage }}" />
+  <div class="flex flex-row justify-between my-24">
+    <div class="font-arsenal flex flex-col w-1/2">
+      <i>
+        {{ project?.name }}
+      </i>
+      <i> {{ project?.loc }} , {{ project?.place }}. </i>
+      <i class="mb-8">Completed : {{ project?.completed?.substring(0, 4) }}</i>
+      <i class="w-1/2 mb-4" *ngFor="let key of getObjectKeys(project?.artist)">
+        <div>{{ key }} :</div>
+        <div>
+          {{ project?.artist[key] }}
+        </div>
+      </i>
+      <i class="mt-4">Visit us</i>
+      <i>
+        <a [href]="project?.website">
+          {{ project?.website }}
+        </a></i
+      >
+    </div>
+    <div class="w-1/2">{{ project?.bio }}</div>
+  </div>
+  <div class="my-24 flex flex-wrap gap-12 justify-center items-center">
+    <img
+      *ngFor="let img of project?.images"
+      class="my-6 max-h-[620px] w-auto bg-contain"
+      [src]="img.url"
+      alt="Image"
+    />
   </div>
 </div>
