@@ -1,0 +1,39 @@
+<div class="my-12 flex flex-row justify-center font-barlow">BLOG</div>
+<div class="px-[7%] flex flex-row justify-center items-center space-x-16">
+  <div class="flex flex-col">
+    <div class="font-semibold">{{ firstHeading }}</div>
+    <div class="mb-4 font-semibold">{{ secondHeading }}</div>
+    <div class="ml-4">{{ headingParagraph }}</div>
+    <div class="ml-8 mt-4 text-sm">
+      <p>
+        {{ subParagraph }}
+      </p>
+    </div>
+  </div>
+  <div>
+    <img class="max-w-[450px] h-auto" [src]="primaryImage" />
+  </div>
+</div>
+<div class="px-[7%]">
+  <div *ngFor="let br of rows" class="my-24">
+    <div *ngIf="br.para2.length > 2; else elseBlock">
+      <div class="flex flex-row space-x-16">
+        <div class="ml-8 flex flex-col justify-between">
+          <div class="text-sm">{{ br.para }}</div>
+          <div class="text-sm">{{ br.para2 }}</div>
+        </div>
+        <img class="max-h-[600px] w-auto" [src]="br.image" />
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <div *ngIf="br.para2 == ''">
+        <div
+          class="ml-8 text-sm flex flex-row justify-between items-start space-x-16"
+        >
+          <p>{{ br.para }}</p>
+          <img class="max-w-[450px] h-auto" [src]="br.image" />
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

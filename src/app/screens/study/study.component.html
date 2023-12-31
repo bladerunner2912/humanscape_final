@@ -1,0 +1,28 @@
+<div class="my-12 flex flex-row justify-center font-barlow">STUDY</div>
+<div class="px-[7%] flex flex-row justify-center items-center space-x-12">
+  <div class="flex flex-col">
+    <div class="font-semibold">{{ firstHeading }}</div>
+    <div class="mb-4 font-semibold">{{ secondHeading }}</div>
+    <div class="ml-4">{{ headingParagraph }}</div>
+    <div class="ml-8 mt-4 text-sm">
+      <p>
+        {{ subParagraph }}
+        <a [href]="subParagraphLink" class="underline">here.</a>
+      </p>
+    </div>
+  </div>
+  <div>
+    <img class="max-w-[500px] h-auto" [src]="primaryImage" />
+  </div>
+</div>
+<div class="mt-12 flex flex-row justify-center font-barlow">PROJECTS</div>
+<div class="my-12 flex flex-wrap gap-12 justify-center items-center">
+  <div *ngFor="let img of images">
+    <img
+      class="my-6 max-h-[620px] w-auto bg-contain"
+      [src]="img.url"
+      alt="Image"
+    />
+    <p class="mt-2 w-[380px] truncated">{{ img.imageName }}</p>
+  </div>
+</div>
